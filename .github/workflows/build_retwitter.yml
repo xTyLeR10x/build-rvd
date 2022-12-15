@@ -39,17 +39,6 @@ jobs:
         ./compile_retwitter.sh
         echo "date_now=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-    - name: Sign package(s)
-      uses: r0adkll/sign-android-release@v1
-      with:
-        releaseDirectory: retwitter/output
-        alias: ${{ secrets.ALIAS }}
-        keyPassword: ${{ secrets.KEY_PASSWORD }}
-        keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-        signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-      env:
-        BUILD_TOOLS_VERSION: "30.0.2"
-
     - name: Upload package(s)
       uses: marvinpinto/action-automatic-releases@v1.2.1
       with:
