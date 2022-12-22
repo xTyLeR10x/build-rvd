@@ -47,4 +47,4 @@ jobs:
         draft: true
         title: "ReTwitter r${{ env.date_now }}"
         files: |
-          retwitter/output/release/*.apk
+          retwitter/output/*.apk
